@@ -263,18 +263,32 @@
 	//} while (i <= 10);
 
 
+//int main()
+//{
+//	int num = 0;
+//	int sum = 0;
+//	printf("请输入数字：");
+//	scanf("%d", &num);
+//	do
+//	{
+//		num = num / 10;
+//		sum ++;
+//	} while (num);
+//	printf("%d", sum);
+//	return 0;
+//}
+
+//break和continue的用法
 int main()
 {
-	int num = 0;
-	int sum = 0;
-	printf("请输入数字：");
-	scanf("%d", &num);
-	do
+	int i = 0;
+	while (i < 10)
 	{
-		num = num / 10;
-		sum ++;
-	} while (num);
-	printf("%d", sum);
+		i++;
+		if (i == 5)
+			continue;
+		printf("%d ", i);
+		
+	}
 	return 0;
 }
-
