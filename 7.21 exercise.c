@@ -154,15 +154,49 @@
 
 
 //第五题 文件下载速度
-int main()
-{
-	float speed = 0.0f;
-	float size = 0.0f;
-	printf("请输入下载速度(Mb/s)和文件大小(MB):");
-	scanf("%f%f", &speed, &size);
-	float time = size * 8 / speed;
-	printf("At %.2f megabits per second,a file of %.2f megabytes\n", speed, size);
-	printf("downloads in %.2f seconds\n", time);
+//int main()
+//{
+//	float speed = 0.0f;
+//	float size = 0.0f;
+//	printf("请输入下载速度(Mb/s)和文件大小(MB):");
+//	scanf("%f%f", &speed, &size);
+//	float time = size * 8 / speed;
+//	printf("At %.2f megabits per second,a file of %.2f megabytes\n", speed, size);
+//	printf("downloads in %.2f seconds\n", time);
+//
+//	return 0;
+//}
 
-	return 0;
-}
+
+//第六题  姓名和其字数多少对齐
+//#include <string.h>
+//int main()
+//{
+//	char givenname[40];
+//	char familyname[40];
+//	printf("输入名和姓:");
+//	scanf("%s%s", givenname, familyname);
+//	int familynum = strlen(familyname);
+//	int givennum = strlen(givenname);
+//	printf("%s %s\n", givenname, familyname);
+//	printf("%-*d %-*d", givennum, givennum, familynum, familynum);
+//
+//	return 0;
+//}
+
+
+//第七题  float.h
+//#include <float.h>
+//int main()
+//{
+//	double num1 = 1.0 / 3.0;
+//	float num2 = 1.0f / 3.0f;
+//	printf("%.6f  %.6f\n", num1, num2);
+//	printf("%.12f  %.12f\n", num1, num2);
+//	printf("%.16f  %.16f\n", num1, num2);
+//	printf("%d\n", FLT_DIG);
+//	printf("%d\n", DBL_DIG);
+//
+//	return 0;
+//}
+
