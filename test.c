@@ -428,49 +428,77 @@
 //   time函数返回的这个时间差也被叫做：时间戳。
 //   time函数的时候需要包含头⽂件：time.h
 //   只是让time函数返回时间戳
+//
+//   如果只是让time函数返回时间戳：  time(NULL);//调⽤time函数返回时间戳，这⾥没有接收返回值
+//
+//四. 设置随机数的范围
+//    如果要⽣成a~b的随机数:   a + rand() % (b - a + 1)
+
+//猜数字游戏
+#include <math.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+void game()
+{
+	time_t start = time(NULL);//统计游戏时间
+	int r = rand() % 100 + 1;
+	int guess = 0;
+	int count = 5;
+	while (count)
+	{
+		printf("请猜数字：");
+		scanf("%d", &guess);
+		count--;
+		if (guess > r)
+		{
+			printf("猜大了\n\n\n");
+			printf("你还有%d次机会", count);
+		}
+		
+		else if (guess < r)
+		{
+			printf("猜小了\n\n\n");
+			printf("你还有%d次机会", count);
+		}
+		else
+		{
+			printf("猜对了\n\n\n");
+			break;
+		}
+	} 
+	if (count == 0)
+		printf("次数用尽\n");
+	time_t end = time(NULL);
+	printf("本次游戏用时：%ld秒\n\n\n", end-start);
+}
 
 
+int main()
+{
+	int input = 0;
+	srand((unsigned int)time(NULL));
+	do
+	{
+		printf("--------------------------\n");
+		printf("------   1.paly   --------\n");
+		printf("------   2.exit   --------\n");
+		printf("--------------------------\n");
+		printf("请输入：");
+		scanf("%d", &input);
+		switch (input)
+		{
+		case 1:
+			game();//函数
+			printf("猜数字\n");
+			break;
+		case 0:
+			printf("退出游戏\n");
+			break;
+		default:
+			printf("选择错误，重新选择\n");
+		}
+	} while (input);
 
-
-
-//
-//#include <math.h>
-//#include <stdlib.h>
-//#include <string.h>
-//void game()
-//{
-//	rand
-//
-//}
-//
-//
-//
-//int main()
-//{
-//	int input = 0;
-//	do
-//	{
-//		printf("--------------------------");
-//		printf("------   1.paly   --------");
-//		printf("------   2.exit   --------");
-//		printf("--------------------------");
-//		printf("请输入：");
-//		scanf("%d", &input);
-//		switch (input)
-//		{
-//		case 1:
-//			game();//函数
-//			printf("猜数字\n");
-//			break;
-//		case 0:
-//			printf("退出游戏\n");
-//			break;
-//		default:
-//			printf("选择错误，重新选择");
-//			break;
-//		}
-//	} while (input);
-//
-//	return 0;
-//
-//}
+	return 0;
+}
