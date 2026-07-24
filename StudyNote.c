@@ -101,10 +101,17 @@
 //
 //变长数组（变量长度数组）
 //1.无法初始化
-//2.给定之后无法改变
+//2.给定之后无法改变(clang编译器可以，MSVC不可以）
 int main()
 {
 	int n = 0;
 	scanf("%d", &n);
 	int arr[n];
+	int i = 0;
+	for (i = 0; i < n; i++)
+	{
+		arr[i]=i+1;
+		printf("%d ", arr[i]);
+	}
+	return 0;
 }
